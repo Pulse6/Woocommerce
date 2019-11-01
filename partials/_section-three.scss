@@ -1,0 +1,83 @@
+main section:nth-child(3) {
+    background-color: #F5F5F7;
+    .wrapper {
+        min-height: 50vh;
+        background: url(/styles/assets/main-image-3.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include flex(space-between, center);
+        div {
+            flex: 1;
+        }
+        h2 {
+            text-transform: uppercase;
+            @include fontSize(30);
+        }
+        p {
+            margin: 2% 0;
+        }
+        p:nth-child(2) {
+            @include fontSize(15);
+            font-style: italic;
+            font-family: $font-stack-crimsontext;
+        }
+        p:nth-child(3) {
+            color: $primarybtn;
+            @include fontSize(20);
+        }
+        button {
+            text-transform: uppercase;
+            background-color: $primarybtn;
+            border: none;
+        }
+        a {
+            @include fontSize(10);
+            letter-spacing: 2px;
+            padding: 10px 30px;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .wrapper {
+            min-height: 40vh;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .wrapper {
+            min-height: 30vh;
+            background-position-x: 150px;
+            h2 {
+                @include fontSize(23);
+            }
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .wrapper {
+            background-size: cover;
+            width: 100%;
+            flex-direction: column;
+            background-position-x: 0px;
+            h2 {
+                padding-top: 20%;
+            }
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .wrapper {
+            background-position-x: -150px;
+            h2 {
+                @include fontSize(16);
+                padding-top: 30%;
+            }
+            p:nth-child(2) {
+                @include fontSize(12);
+            }
+            p:nth-child(3) {
+                @include fontSize(16);
+            }
+        }
+    }
+}

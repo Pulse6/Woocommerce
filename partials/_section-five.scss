@@ -1,0 +1,12 @@
+main section:nth-child(5) {
+    background-image: linear-gradient(to right, #F6F6F8 0%, #F3F3F5 100%);
+    .wrapper {
+        @include flex(space-between, center);
+    }
+    img {
+        flex: 1;
+    }
+    @media screen and (max-width: 1000px) {
+        
+    }
+}

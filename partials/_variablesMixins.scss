@@ -1,0 +1,40 @@
+// variables
+$primaryColour: #FFF;
+$primaryLight: lighten($primaryColour, 25);
+$primaryDark: darken($primaryColour, 25);
+
+$secondaryColour: rgba(246, 247, 249, 0.9);
+
+$primaryTextColour: #e4e4e4;
+$primaryTextColourDark: darken($primaryColour, 100);
+$secondaryTextColour: #141414;
+$secondaryBackgrounColourlight: rgba(230, 33, 49, 0.03);
+
+$primarybtn: #eeb013;
+
+// mixins
+
+// fontSize;
+@mixin fontSize($sizeValue) {
+	font-size: $sizeValue * 1px;
+	font-size: ($sizeValue/10) * 1rem;
+}
+
+// flex 
+@mixin flex($just,$align) {
+	display: flex;
+	justify-content: $just;
+	align-items: $align;
+}
+
+// Fonts
+// Montserrat (Google Fonts)
+// Crimson Text(Google Fonts)
+
+// Icons
+// Font Awesome
+
+// Colours
+// Yellow #eeb013
+// Black #141414
+// Light Grey #e4e4e4

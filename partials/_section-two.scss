@@ -1,0 +1,79 @@
+main section:nth-child(2) {
+    background-color: #ECE8E9;
+    .wrapper {
+        min-height: 50vh;
+        background: url(/styles/assets/main-image-2.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include flex(space-between, center);
+        div {
+            flex: 1;
+        }
+        h2 {
+            text-transform: uppercase;
+            @include fontSize(30);
+        }
+        p {
+            margin: 4% 0;
+        }
+        p:nth-child(2) {
+            @include fontSize(15);
+            font-style: italic;
+            font-family: $font-stack-crimsontext;
+        }
+        p:nth-child(3) {
+            color: $primarybtn;
+            @include fontSize(20);
+        }
+        button {
+            text-transform: uppercase;
+            background-color: $primarybtn;
+            border: none;
+        }
+        a {
+            @include fontSize(10);
+            letter-spacing: 2px;
+            padding: 10px 30px;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .wrapper {
+            min-height: 40vh;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .wrapper {
+            min-height: 30vh;
+            h2 {
+                @include fontSize(25);
+            }
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .wrapper {
+            background-size: cover;
+            width: 100%;
+            flex-direction: column;
+            color: $primaryColour;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .wrapper {
+            h2 {
+                text-shadow: 0 0 10px #000;
+                @include fontSize(16);
+            }
+            p:nth-child(2) {
+                @include fontSize(12);
+                text-shadow: 0 0 10px #000;
+            }
+            p:nth-child(3) {
+                @include fontSize(16);
+            }
+        }
+    }
+}

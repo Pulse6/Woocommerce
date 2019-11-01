@@ -1,0 +1,29 @@
+main section:nth-child(4) {
+    .wrapper {
+        @include flex(space-between, center);
+        text-align: center;
+        padding: 3% 0;
+    }
+    .fas {
+        @include fontSize(35);
+        padding: 5% 0;
+    }
+    h2 {
+        @include fontSize(14);
+        padding: 5% 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    p {
+        @include fontSize(13);
+        opacity: 0.5;
+        line-height: 150%;
+        padding: 0 5%;
+        font-style: italic;
+    }
+    @media screen and (max-width: 760px) {
+        .wrapper {
+            flex-direction: column;
+        }
+    }
+}

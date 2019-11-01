@@ -1,0 +1,122 @@
+footer {
+  color: $primaryTextColour;
+  background-color: $secondaryTextColour;
+  @include fontSize(12);
+  padding: 3% 0;
+  section:nth-child(1) {
+    @include flex(space-between, center);
+  }
+  .left-line {
+    border-left: 2px solid $primaryTextColour;
+    padding-left: 2%;
+    min-height: 30vh;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  .info {
+    h2 {
+      color: $primarybtn;
+    }
+    flex: 1.6;
+    padding-right: 2%;
+    p {
+      padding: 5% 0;
+      line-height: 200%;
+    }
+    img {
+      max-width: 180px;
+    }
+  }
+  .media {
+    flex: 0.6;
+    a {
+      margin: 13% 0;
+      color: $primaryTextColour;
+      &:hover {
+        color: $primarybtn;
+      }
+    }
+  }
+  .twitter {
+    flex: 1.2;
+    p {
+      line-height: 170%;
+      padding-top: 5%;
+    }
+    i {
+      padding-top: 3%;
+    }
+  }
+  .instargram {
+    flex: 1;
+    h2 {
+        padding-bottom: 5%;
+    }
+    div:hover img {
+      filter: blur(1px);
+    }
+    div img {
+      max-width: 70px;
+      margin: 2%;
+      cursor: pointer;
+      // z-index: 1;
+      &:hover {
+        filter: blur(0px);
+      }
+    }
+  }
+  section:nth-child(2) {
+    @include flex(space-between, center);
+    padding-top: 5%;
+    i {
+        padding: 0 20px;
+        cursor: pointer;
+        &:hover {
+          color: $primarybtn;
+        }
+    }
+  }
+  @media screen and (max-width: 1331px) {
+    .wrapper {
+      width: 99%;
+    }
+  }
+  @media screen and (max-width: 1360px) {
+    section:nth-child(1) {
+      flex-wrap: wrap;
+    }
+    .info {
+      min-width: 423px;
+    }
+    .media {
+      min-width: 176px;
+    }
+    .twitter {
+      min-width: 326px;
+    }
+    .instargram {
+      min-width: 276px;
+    }
+  }
+  @media screen and (max-width: 423px) {
+    .info, .media, .twitter, .instargram {
+      min-width: initial;
+    }
+    section:nth-child(1) {
+      flex-direction: column;
+    }
+    .media {
+      width: 100%;
+    }
+    .info {
+      padding-bottom: 5%;
+    }
+    section:nth-child(2) {
+      flex-direction: column-reverse;
+      p, div {
+        padding: 2% 0;
+      }
+    }
+  }
+}

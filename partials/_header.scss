@@ -1,0 +1,183 @@
+header {
+  background: url(/styles/assets/main-image-1.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: $primaryColour;
+  // .wrapper {
+  //     position: relative;
+  // }
+  nav {
+    min-height: 6.5vh;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+  }
+  img {
+    // height: 100%;
+    max-height: 40px;
+    padding-left: 15px;
+  }
+  nav {
+    @include flex(space-between, center);
+    // padding-top: 3%;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 0 15px;
+    position: relative;
+  }
+  ul a {
+    color: $primaryColour;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0);
+    text-shadow: 0 0 5px #000;
+    line-height: 6.5vh;
+    transition: all 0.3s;
+    &:hover {
+      border-bottom: 2px solid $primarybtn;
+      color: $primarybtn;
+    }
+  }
+
+  // .nav-link {
+  //   transform: scale(0);
+  //   transition: transform 0.65s;
+  // }
+  // .nav-list.active .nav-link {
+  //   transform: scale(1);
+  // }
+// nav hamburger
+  .hamburger {
+    width: 4vh;
+    height: 3vh;
+    position: relative;
+    cursor: pointer;
+    line-height: 2vh;
+    z-index: 1000;
+  }
+  .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    transition: all 0.65s;
+    right: 0;
+  }
+  .line:nth-child(1) {
+    top: 0;
+  }
+  .line:nth-child(2) {
+    top: 40%;
+    width: 2.5vh;
+  }
+  .line:nth-child(3) {
+    top: 90%;
+    width: 1.5vh;
+  }
+  .hamburger.active .line:nth-child(1) {
+    transform: translateY(1.25vh) rotate(45deg);
+    width: 4vh;
+  }
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .line:nth-child(3) {
+    transform: translateY(-1.25vh) rotate(-45deg);
+    width: 4vh;
+  }
+  .hamburger {
+    display: none;
+  }
+  @media screen and (max-width: 800px) {
+    .hamburger {
+      display: block;
+    }
+    .nav-list {
+      display: none;
+      text-align: center;
+    }
+    .nav-list.active {
+      display: block;
+    }
+    .outside {
+      z-index: 1;
+      position: absolute;
+      top: 6.5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+// nav hamburger ends
+  .header-fas {
+    @include flex(space-between, center);
+  }
+  .header-fas i {
+    padding: 0 20px;
+    text-shadow: 0 0 2px #000;
+    &:hover {
+      color: $primarybtn;
+      cursor: pointer;
+    }
+  }
+  section {
+    min-height: 90vh;
+    @include flex(center, center);
+    flex-direction: column;
+  }
+  h1 {
+    @include fontSize(70);
+    padding: 0 4%;
+    margin: 1% 0 3% 0;
+    border: 2px solid $primaryColour;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: $primaryColour;
+    text-transform: uppercase;
+    @include fontSize(15);
+    a {
+      display: block;
+      color: $primaryColour;
+      padding: 10px 35px;
+      border: 2px solid $primaryColour;
+      &:hover {
+        color: $primarybtn;
+        border-color: $primarybtn;
+      }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    nav .hide {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 616px) {
+    h1 {
+      @include fontSize(45);
+    }
+    h2 {
+      @include fontSize(16);
+    }
+  }
+  @media screen and (max-width: 405px) {
+    h1 {
+      @include fontSize(28);
+    }
+    h2 {
+      @include fontSize(12);
+    }
+    button {
+      @include fontSize(12);
+    }
+  }
+}
